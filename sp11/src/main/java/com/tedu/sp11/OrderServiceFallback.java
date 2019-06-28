@@ -29,7 +29,7 @@ public class OrderServiceFallback implements FallbackProvider {
     }
 
     private ClientHttpResponse response() {
-        ClientHttpResponse clientHttpResponse = new ClientHttpResponse() {
+        return new ClientHttpResponse() {
             @Override
             public HttpStatus getStatusCode() throws IOException {
                 return HttpStatus.OK;
@@ -63,6 +63,5 @@ public class OrderServiceFallback implements FallbackProvider {
                 return headers;
             }
         };
-        return clientHttpResponse;
     }
 }
